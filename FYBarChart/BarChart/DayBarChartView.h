@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 typedef enum : NSUInteger {
-    Weeks = 0,       //柱状图格式  --- 周
-    MonthS,          //  月
-    Years,           //  年   ---- 暂不考虑
+    WeeksType = 1,       //柱状图格式  --- 周
+    MonthsType,          //  月
+    YearsType,           //  年   ---- 暂不考虑
 } BarCharType;
 
 @interface DayBarChartView : UIView

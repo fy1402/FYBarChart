@@ -43,7 +43,7 @@
 
 - (void)drawRect:(CGRect)rect {
     [self setupTheYcoordinates];
-    [self setupTheXcoordinates];
+    [self setupTheXcoordinatesType:self.type];
     [self setupTheHistogramView];
 }
 
@@ -112,17 +112,50 @@
 }
 
 //创建X坐标
-- (void)setupTheXcoordinates {
+- (void)setupTheXcoordinatesType:(BarCharType)type {
     int i = 0;
-    for (NSString *str in self.weeks) {
-        i++;
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width / 9 * i, self.frame.size.height - 100 + 20, 50, 20)];
-        label.text = str;
-        label.textAlignment = NSTextAlignmentCenter;
-        label.font = [UIFont systemFontOfSize:11];
-        label.textColor = [UIColor whiteColor];
-        [self addSubview:label];
+    NSArray *array;
+    NSInteger k;
+    if (type == WeeksType) {
+        array = self.weeks;
+        k = 9;
+        for (NSString *str in array) {
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((75 + (self.frame.size.width - 50) / k * i), self.frame.size.height - 100 + 20, 20, 20)];
+            label.text = str;
+            label.textAlignment = NSTextAlignmentCenter;
+            label.font = [UIFont systemFontOfSize:11];
+            label.textColor = [UIColor whiteColor];
+            [self addSubview:label];
+            i++;
+        }
+    } else if (type == MonthsType) {
+        array = self.months;
+        k = 33;
+        for (NSString *str in array) {
+            if (str.integerValue % 2) {
+                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((50 + (self.frame.size.width - 50) / k * i), self.frame.size.height - 100 + 20, 20, 20)];
+                label.text = str;
+                label.textAlignment = NSTextAlignmentCenter;
+                label.font = [UIFont systemFontOfSize:11];
+                label.textColor = [UIColor whiteColor];
+                [self addSubview:label];
+            }
+            i++;
+        }
+    } else {
+        array = self.weeks;
+        k = 9;
+        for (NSString *str in array) {
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((100 + (self.frame.size.width - 50) / k * i), self.frame.size.height - 100 + 20, 20, 20)];
+            label.text = str;
+            label.textAlignment = NSTextAlignmentCenter;
+            label.font = [UIFont systemFontOfSize:11];
+            label.textColor = [UIColor whiteColor];
+            [self addSubview:label];
+            i++;
+        }
     }
+    
 }
 
 //给你个柱子
@@ -130,7 +163,7 @@
     int i = 0;
     for (NSString *str in self.dataSourceArr) {
         i++;
-        UIView *hView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.size.width / 9 * i + (self.frame.size.width / 9 / 2), (self.frame.size.height - self.than * str.floatValue - 84), 5, self.than * str.floatValue)];
+        UIView *hView = [[UIView alloc] initWithFrame:CGRectMake((50 + (self.frame.size.width - 50) / (self.dataSourceArr.count + 2) * i), (self.frame.size.height - self.than * str.floatValue - 84), 5, self.than * str.floatValue)];
         hView.backgroundColor = [UIColor whiteColor];
         hView.alpha = 0.7;
         [self addSubview:hView];
@@ -149,7 +182,6 @@
     if (!_months) {
 //        _months = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"21", @"22", @"23", @"24", @"25", @"26", @"27", @"28", @"29", @"30", @"31", nil];
         _months = [DayBarChartMessage accordingToTheDataGetInDays_Data:_dataSourceArr];
-        NSLog(@"sdfsdf");
     }
     return _months;
 }

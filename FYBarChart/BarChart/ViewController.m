@@ -14,11 +14,10 @@
 #define HEIGHT self.view.frame.size.height
 
 
-//PNChart
-//core-plot-master
 
 @interface ViewController ()
 @property (nonatomic, strong) DayBarChartView *dayBarChartView;
+//@property (nonatomic, assign) BarCharType type;
 @end
 
 @implementation ViewController
@@ -31,11 +30,12 @@
 
 - (void)setupBarChartView {
     
+//    NSArray *dataSources = [NSArray arrayWithObjects:@"100", @"17", @"37", @"100", @"200", @"300", @"700", @"100", @"17", @"37", @"100", @"200", @"300", @"700", @"100", @"17", @"37", @"100", @"200", @"300", @"700", @"100", @"17", @"37", @"100", @"200", @"300", @"700", @"200", @"300", @"700", nil];
     NSArray *dataSources = [NSArray arrayWithObjects:@"100", @"17", @"37", @"100", @"200", @"300", @"700", nil];
     CGFloat flo = [DayBarChartMessage getTheMostValueFromTheArray:dataSources];
     NSArray *arr = [DayBarChartMessage showTheYcoordinates:flo];
     NSLog(@"%@", arr);
-    self.dayBarChartView = [[DayBarChartView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - 100) item:0 dateSource:dataSources];
+    self.dayBarChartView = [[DayBarChartView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - 100) item:WeeksType dateSource:dataSources];
     [self.view addSubview:self.dayBarChartView];
 }
 

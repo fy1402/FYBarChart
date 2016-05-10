@@ -51,6 +51,7 @@
     NSMutableArray *muDays = [NSMutableArray array];
     for (NSString *str in days) {
         [muDays addObject:[NSString stringWithFormat:@"%d", i]];
+        i++;
     }
     return [muDays mutableCopy];
 }
