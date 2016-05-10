@@ -114,12 +114,10 @@
 //创建X坐标
 - (void)setupTheXcoordinatesType:(BarCharType)type {
     int i = 0;
-    NSArray *array;
     NSInteger k;
     if (type == WeeksType) {
-        array = self.weeks;
         k = 9;
-        for (NSString *str in array) {
+        for (NSString *str in self.weeks) {
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((75 + (self.frame.size.width - 50) / k * i), self.frame.size.height - 100 + 20, 20, 20)];
             label.text = str;
             label.textAlignment = NSTextAlignmentCenter;
@@ -129,11 +127,10 @@
             i++;
         }
     } else if (type == MonthsType) {
-        array = self.months;
-        k = 33;
-        for (NSString *str in array) {
+        k = self.months.count + 2;
+        for (NSString *str in self.months) {
             if (str.integerValue % 2) {
-                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((50 + (self.frame.size.width - 50) / k * i), self.frame.size.height - 100 + 20, 20, 20)];
+                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((53 + (self.frame.size.width - 50) / k * i), self.frame.size.height - 100 + 20, 20, 20)];
                 label.text = str;
                 label.textAlignment = NSTextAlignmentCenter;
                 label.font = [UIFont systemFontOfSize:11];
@@ -143,9 +140,8 @@
             i++;
         }
     } else {
-        array = self.weeks;
         k = 9;
-        for (NSString *str in array) {
+        for (NSString *str in self.weeks) {
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((100 + (self.frame.size.width - 50) / k * i), self.frame.size.height - 100 + 20, 20, 20)];
             label.text = str;
             label.textAlignment = NSTextAlignmentCenter;
