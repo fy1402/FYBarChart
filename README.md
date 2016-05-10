@@ -1,22 +1,22 @@
-# FYBarChart
-
+# FYBarChart----柱状图（持续更新中）
 
 
 a simple BarChart
 
-#import "DayBarChartView.h"
-#import "DayBarChartMessage.h"
+### 简介
+* 一个根据数据还显示出柱状图的，简单易懂
 
-define WIDTH  self.view.frame.size.width
-define HEIGHT self.view.frame.size.height
-@property (nonatomic, strong) DayBarChartView *dayBarChartView;
+### 待完成功能
 
-//- (void)setupBarChartView {\n
-#property mark --- 这里分为周和月显示---item:type要设置好\n
-NSArray *dataSources = [NSArray arrayWithObjects:@"100", @"17", @"37", @"100", @"200", @"300", @"700", @"100", @"17", @"37", @"100", @"200", @"300", @"700", @"100", @"17", @"37", @"100", @"200", @"300", @"700", @"100", @"17", @"37", @"100", @"200", @"300", nil];\n
-//    NSArray *dataSources = [NSArray arrayWithObjects:@"100", @"17", @"37", @"100", @"200", @"300", @"700", nil];\n
-CGFloat flo = [DayBarChartMessage getTheMostValueFromTheArray:dataSources];\n
-NSArray *arr = [DayBarChartMessage showTheYcoordinates:flo];\n
-self.dayBarChartView = [[DayBarChartView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - 100) item:MonthsType dateSource:dataSources];\n
-[self.view addSubview:self.dayBarChartView];\n
-}
+* 好多好多
+
+### Requirement
+
+* iOS 8.0+ 
+* Xcode 7.3 +
+
+
+# 期待
+- 如果在使用过程中遇到BUG，或发现功能不够用，希望你能Issues我
+- 如果觉得好用请Star!
+- 谢谢!
