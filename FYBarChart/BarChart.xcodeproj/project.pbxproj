@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21656C461CE3073300F92BC1 /* PopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21656C451CE3073300F92BC1 /* PopViewController.m */; };
 		21801AC11C9BCDC300F5771B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21801AC01C9BCDC300F5771B /* main.m */; };
 		21801AC41C9BCDC300F5771B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21801AC31C9BCDC300F5771B /* AppDelegate.m */; };
 		21801AC71C9BCDC300F5771B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21801AC61C9BCDC300F5771B /* ViewController.m */; };
@@ -38,8 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		21656C441CE3073300F92BC1 /* PopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopViewController.h; sourceTree = "<group>"; };
-		21656C451CE3073300F92BC1 /* PopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopViewController.m; sourceTree = "<group>"; };
 		21801ABC1C9BCDC300F5771B /* BarChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21801AC01C9BCDC300F5771B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		21801AC21C9BCDC300F5771B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,8 +115,6 @@
 				21801AF31C9BCE4000F5771B /* DayBarChartView.m */,
 				21801AF51C9BCE5A00F5771B /* DayBarChartMessage.h */,
 				21801AF61C9BCE5A00F5771B /* DayBarChartMessage.m */,
-				21656C441CE3073300F92BC1 /* PopViewController.h */,
-				21656C451CE3073300F92BC1 /* PopViewController.m */,
 				21801AC81C9BCDC300F5771B /* Main.storyboard */,
 				21801ACB1C9BCDC300F5771B /* Assets.xcassets */,
 				21801ACD1C9BCDC300F5771B /* LaunchScreen.storyboard */,
@@ -285,7 +280,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21656C461CE3073300F92BC1 /* PopViewController.m in Sources */,
 				21801AF41C9BCE4000F5771B /* DayBarChartView.m in Sources */,
 				21801AC71C9BCDC300F5771B /* ViewController.m in Sources */,
 				21801AF71C9BCE5A00F5771B /* DayBarChartMessage.m in Sources */,
