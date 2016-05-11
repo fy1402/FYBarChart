@@ -70,8 +70,8 @@
 //color gradient layer 不透明
 - (void) insertColorGradient {
     
-    UIColor *colorOne = [UIColor colorWithRed:(248/255.0) green:(201/255.0) blue:(58/255.0) alpha:1.0];
-    UIColor *colorTwo = [UIColor colorWithRed:(240/255.0)  green:(104/255.0)  blue:(30/255.0)  alpha:1.0];
+    UIColor *colorOne = [UIColor colorWithRed:(56/255.0) green:(131/255.0) blue:(226/255.0) alpha:1.0];
+    UIColor *colorTwo = [UIColor colorWithRed:(149/255.0)  green:(193/255.0)  blue:(253/255.0)  alpha:1.0];
     
     NSArray *colors = [NSArray arrayWithObjects:(id)colorOne.CGColor, colorTwo.CGColor, nil];
     NSNumber *stopOne = [NSNumber numberWithFloat:0.0];
@@ -162,8 +162,70 @@
         UIView *hView = [[UIView alloc] initWithFrame:CGRectMake((50 + (self.frame.size.width - 50) / (self.dataSourceArr.count + 2) * i), (self.frame.size.height - self.than * str.floatValue - 84), 5, self.than * str.floatValue)];
         hView.backgroundColor = [UIColor whiteColor];
         hView.alpha = 0.7;
+        hView.tag = i;
         [self addSubview:hView];
+        
+        UITapGestureRecognizer *singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
+        singleRecognizer.numberOfTapsRequired = 1;
+        [hView addGestureRecognizer:singleRecognizer];
+        
+        UITapGestureRecognizer *doubleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+        doubleRecognizer.numberOfTapsRequired = 2; // 双击
+        //关键语句，给self.view添加一个手势监测；
+        [hView addGestureRecognizer:doubleRecognizer];
+        // 关键在这一行，双击手势确定监测失败才会触发单击手势的相应操作
+        [singleRecognizer requireGestureRecognizerToFail:doubleRecognizer];
     }
+}
+
+-(void)singleTap:(UITapGestureRecognizer*)recognizer
+{
+    //处理单击操作
+//    NSLog(@"%@", recognizer.view);
+    
+    UIView *view = recognizer.view;
+    CGFloat x = view.frame.origin.x - 1.5;
+    CGFloat y = view.frame.origin.y;
+    CGFloat x1 = view.frame.origin.x;
+    CGFloat y1 = view.frame.origin.y;
+    
+    UILabel *popLabel = [[UILabel alloc] init];
+    
+    NSString *valueStr = [NSString stringWithFormat:@"%.2f", view.frame.size.height / self.than];
+    [UIView animateWithDuration:0.3 animations:^{
+        view.alpha = 1;
+        view.frame = CGRectMake(x, y, view.frame.size.width + 3, view.frame.size.height);
+        if (self.popViewStartBlock) {
+            self.popViewStartBlock(valueStr);
+        }
+        
+        popLabel.frame = CGRectMake(x - 10, y - 20, 30, 20);
+        popLabel.textAlignment = NSTextAlignmentCenter;
+        popLabel.text = valueStr;
+        popLabel.font = [UIFont systemFontOfSize:7];
+        popLabel.textColor = [UIColor redColor];
+        [self addSubview:popLabel];
+        [view updateConstraints];
+    } completion:^(BOOL finished) {
+        double delayInSeconds = 2.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [UIView animateWithDuration:0.3 animations:^{
+                view.alpha = 0.7;
+                view.frame = CGRectMake(x1, y1, view.frame.size.width - 3, view.frame.size.height);
+                if (self.popViewCloseBlock) {
+                    self.popViewCloseBlock();
+                }
+                [popLabel removeFromSuperview];
+                [view updateConstraints];
+            }];
+        });
+    }];
+}
+
+-(void)doubleTap:(UITapGestureRecognizer*)recognizer
+{
+    NSLog(@"双击");
 }
 
 #pragma mark ------ ______ -------
@@ -176,7 +238,6 @@
 
 - (NSArray *)months {
     if (!_months) {
-//        _months = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"21", @"22", @"23", @"24", @"25", @"26", @"27", @"28", @"29", @"30", @"31", nil];
         _months = [DayBarChartMessage accordingToTheDataGetInDays_Data:_dataSourceArr];
     }
     return _months;

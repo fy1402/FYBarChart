@@ -24,6 +24,10 @@ typedef enum : NSUInteger {
 //柱状图高度比重
 @property (nonatomic, assign) CGFloat than;
 
+//popview显示的柱状图参数
+@property (nonatomic, copy) void(^popViewStartBlock)(NSString *value);
+@property (nonatomic, copy) void(^popViewCloseBlock)();
+
 - (instancetype)initWithFrame:(CGRect)frame
                          item:(BarCharType)barcharType
                    dateSource:(NSArray *)dataArray;
