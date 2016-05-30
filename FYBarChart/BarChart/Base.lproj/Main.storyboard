@@ -32,7 +32,29 @@
                     <view key="view" contentMode="scaleToFill" id="vXW-Og-8SM">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Rc-5a-uPy">
+                                <rect key="frame" x="127" y="128" width="66" height="30"/>
+                                <state key="normal" title="Bar Chart"/>
+                                <connections>
+                                    <action selector="BarChartClick:" destination="KMu-hh-M6W" eventType="touchUpInside" id="Zqv-AX-rNI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5T-Ra-bhf">
+                                <rect key="frame" x="125" y="211" width="71" height="30"/>
+                                <state key="normal" title="Line Chart"/>
+                                <connections>
+                                    <action selector="LineChartClick:" destination="KMu-hh-M6W" eventType="touchUpInside" id="v1J-7I-dqg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="r5T-Ra-bhf" firstAttribute="centerX" secondItem="vXW-Og-8SM" secondAttribute="centerX" id="M7K-mV-A31"/>
+                            <constraint firstItem="6Rc-5a-uPy" firstAttribute="centerX" secondItem="vXW-Og-8SM" secondAttribute="centerX" id="Olm-D0-oqo"/>
+                            <constraint firstItem="6Rc-5a-uPy" firstAttribute="top" secondItem="hfy-bD-7sR" secondAttribute="bottom" constant="128" id="RMa-55-kyd"/>
+                            <constraint firstItem="r5T-Ra-bhf" firstAttribute="top" secondItem="6Rc-5a-uPy" secondAttribute="bottom" constant="53" id="YzH-rJ-Nrk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uBc-v4-b2O"/>
                 </viewController>

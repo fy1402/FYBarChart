@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  BarChart
+//
+//  Created by 丰雨 on 16/5/20.
+//  Copyright © 2016年 Feng. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Header.h"
+
+#endif /* PrefixHeader_pch */

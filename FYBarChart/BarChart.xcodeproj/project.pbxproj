@@ -17,6 +17,9 @@
 		21801AE51C9BCDC300F5771B /* BarChartUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21801AE41C9BCDC300F5771B /* BarChartUITests.m */; };
 		21801AF41C9BCE4000F5771B /* DayBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21801AF31C9BCE4000F5771B /* DayBarChartView.m */; };
 		21801AF71C9BCE5A00F5771B /* DayBarChartMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21801AF61C9BCE5A00F5771B /* DayBarChartMessage.m */; };
+		21CF45B51CEEDBFF00186B12 /* LineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CF45B41CEEDBFF00186B12 /* LineChartView.m */; };
+		21DAE0891CEEC29900D62687 /* BarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DAE0881CEEC29900D62687 /* BarChartViewController.m */; };
+		21DAE08C1CEEC37B00D62687 /* LineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DAE08B1CEEC37B00D62687 /* LineChartViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,14 @@
 		21801AF31C9BCE4000F5771B /* DayBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayBarChartView.m; sourceTree = "<group>"; };
 		21801AF51C9BCE5A00F5771B /* DayBarChartMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayBarChartMessage.h; sourceTree = "<group>"; };
 		21801AF61C9BCE5A00F5771B /* DayBarChartMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayBarChartMessage.m; sourceTree = "<group>"; };
+		21CF45B31CEEDBFF00186B12 /* LineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartView.h; sourceTree = "<group>"; };
+		21CF45B41CEEDBFF00186B12 /* LineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartView.m; sourceTree = "<group>"; };
+		21CF45B61CEEDFB600186B12 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		21CF45B71CEEE09800186B12 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		21DAE0871CEEC29900D62687 /* BarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartViewController.h; sourceTree = "<group>"; };
+		21DAE0881CEEC29900D62687 /* BarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartViewController.m; sourceTree = "<group>"; };
+		21DAE08A1CEEC37B00D62687 /* LineChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartViewController.h; sourceTree = "<group>"; };
+		21DAE08B1CEEC37B00D62687 /* LineChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +122,19 @@
 				21801AC31C9BCDC300F5771B /* AppDelegate.m */,
 				21801AC51C9BCDC300F5771B /* ViewController.h */,
 				21801AC61C9BCDC300F5771B /* ViewController.m */,
+				21DAE08A1CEEC37B00D62687 /* LineChartViewController.h */,
+				21DAE08B1CEEC37B00D62687 /* LineChartViewController.m */,
+				21CF45B31CEEDBFF00186B12 /* LineChartView.h */,
+				21CF45B41CEEDBFF00186B12 /* LineChartView.m */,
+				21DAE0871CEEC29900D62687 /* BarChartViewController.h */,
+				21DAE0881CEEC29900D62687 /* BarChartViewController.m */,
 				21801AF21C9BCE4000F5771B /* DayBarChartView.h */,
 				21801AF31C9BCE4000F5771B /* DayBarChartView.m */,
 				21801AF51C9BCE5A00F5771B /* DayBarChartMessage.h */,
 				21801AF61C9BCE5A00F5771B /* DayBarChartMessage.m */,
 				21801AC81C9BCDC300F5771B /* Main.storyboard */,
+				21CF45B61CEEDFB600186B12 /* PrefixHeader.pch */,
+				21CF45B71CEEE09800186B12 /* Header.h */,
 				21801ACB1C9BCDC300F5771B /* Assets.xcassets */,
 				21801ACD1C9BCDC300F5771B /* LaunchScreen.storyboard */,
 				21801AD01C9BCDC300F5771B /* Info.plist */,
@@ -280,11 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21DAE0891CEEC29900D62687 /* BarChartViewController.m in Sources */,
 				21801AF41C9BCE4000F5771B /* DayBarChartView.m in Sources */,
 				21801AC71C9BCDC300F5771B /* ViewController.m in Sources */,
 				21801AF71C9BCE5A00F5771B /* DayBarChartMessage.m in Sources */,
 				21801AC41C9BCDC300F5771B /* AppDelegate.m in Sources */,
 				21801AC11C9BCDC300F5771B /* main.m in Sources */,
+				21DAE08C1CEEC37B00D62687 /* LineChartViewController.m in Sources */,
+				21CF45B51CEEDBFF00186B12 /* LineChartView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BarChart/PrefixHeader.pch/";
 				INFOPLIST_FILE = BarChart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ake.BarChart;
@@ -434,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BarChart/PrefixHeader.pch/";
 				INFOPLIST_FILE = BarChart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ake.BarChart;
